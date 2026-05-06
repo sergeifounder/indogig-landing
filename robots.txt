@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://indogig.com/sitemap.xml
