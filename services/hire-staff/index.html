@@ -412,6 +412,10 @@
   color: #333;
   line-height: 1.5;
 }
+/* Mobile phone clones (hidden on desktop, shown on mobile) */
+.story-panel-phone {
+  display: none;
+}
 /* Mobile: stack vertically */
 @media (max-width: 768px) {
   .story-inner {
@@ -419,15 +423,41 @@
     gap: 0;
   }
   .story-phone-col {
-    position: relative;
-    top: auto;
-    margin: 24px auto;
+    display: none !important;
   }
-  .story-panel { min-height: auto; padding: 40px 0; }
+  .story-panel {
+    min-height: auto;
+    padding: 40px 0;
+    opacity: 1;
+    transform: none;
+  }
   .story-dots { display: none; }
-  .story-badge { right: -12px; }
-  /* Show all phones inline on mobile */
-  .story-phone-col.mobile-hidden { display: none; }
+  .story-panel-phone {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 16px;
+  }
+  .story-panel-phone .hp {
+    width: 260px;
+    height: 500px;
+  }
+  .story-panel-phone .story-screen-state {
+    display: flex;
+  }
+  .story-panel-phone .story-badge-m {
+    position: absolute;
+    top: 48px;
+    right: -8px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    white-space: nowrap;
+    z-index: 5;
+  }
 }
 </style>
 </head>
@@ -494,6 +524,23 @@
             <li data-i18n="hire.story.s1.b2">&#128683; ~30% no-show rate</li>
             <li data-i18n="hire.story.s1.b3">&#128308; Zero BPJS compliance</li>
           </ul>
+          <!-- Mobile phone for step 1 -->
+          <div class="story-panel-phone">
+            <div style="position:relative">
+              <div class="story-badge-m">&#128260; Re-book favorites</div>
+              <div class="hp"><div class="hp-notch"></div><div class="hp-screen">
+                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av" style="background:#64748B;font-size:8px">BS</div><div><div class="nm">Bali Staffing Group</div><div class="st">18 participants</div></div></div>
+                <div class="hp-wa-body"><div class="story-screen-state">
+                  <div class="hp-msg out">Need 5 waiters tonight for dinner service, anyone available??<div class="t">19:42 &#10003;&#10003;</div></div>
+                  <div class="hp-msg in"><strong>Wayan</strong><br>Sorry boss, already booked &#128591;<div class="t">19:45</div></div>
+                  <div class="hp-msg in"><strong>Kadek</strong><br>Maybe tomorrow?<div class="t">19:51</div></div>
+                  <div class="hp-msg in"><strong>Putu</strong><br>I can bring 2 friends, never done service tho<div class="t">20:03</div></div>
+                  <div class="hp-sys">&#9200; 2 hours later</div>
+                  <div class="hp-msg out">Still need 3 more, service starts in 1 hr &#128547;<div class="t">21:38 &#10003;&#10003;</div><div class="hp-seen">seen by 12</div></div>
+                </div></div>
+              </div><div class="hp-home"></div></div>
+            </div>
+          </div>
         </div>
 
         <!-- STEP 2: ONE MESSAGE -->
@@ -501,6 +548,20 @@
           <div class="step-label" data-i18n="hire.story.s2.label">02 &middot; ONE MESSAGE</div>
           <h2 data-i18n="hire.story.s2.h2">Send one WhatsApp message. We handle the rest.</h2>
           <p class="story-desc" data-i18n="hire.story.s2.p">Tell us what you need &mdash; role, date, location, headcount. Our team responds in minutes. No forms. No portals. No app to download.</p>
+          <!-- Mobile phone for step 2 -->
+          <div class="story-panel-phone">
+            <div style="position:relative">
+              <div class="story-badge-m">&#9201; Minutes, not hours</div>
+              <div class="hp"><div class="hp-notch"></div><div class="hp-screen">
+                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av">IG</div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
+                <div class="hp-wa-body"><div class="story-screen-state">
+                  <div class="hp-msg out">Need 5 waiters for Saturday dinner service, Seminyak, 5pm-11pm<div class="t">09:14 &#10003;&#10003;</div></div>
+                  <div class="hp-msg in">Got it! &#10003; Checking our verified pool...<div class="t">09:14</div></div>
+                  <div class="hp-typing show"><span></span><span></span><span></span></div>
+                </div></div>
+              </div><div class="hp-home"></div></div>
+            </div>
+          </div>
         </div>
 
         <!-- STEP 3: MATCHED -->
@@ -513,6 +574,27 @@
             <li data-i18n="hire.story.s3.b2">&#128336; Shift history verified</li>
             <li data-i18n="hire.story.s3.b3">&#128993; BPJS-insured</li>
           </ul>
+          <!-- Mobile phone for step 3 -->
+          <div class="story-panel-phone">
+            <div style="position:relative">
+              <div class="story-badge-m">&#11088; Every worker rated</div>
+              <div class="hp"><div class="hp-notch"></div><div class="hp-screen">
+                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av">IG</div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
+                <div class="hp-wa-body"><div class="story-screen-state">
+                  <div class="hp-msg in">Found 5 rated waiters available:<div class="t">09:15</div></div>
+                  <div class="hp-msg in" style="padding:4px 6px">
+                    <div class="hp-worker-card"><div class="wn">Made W.</div><div class="wm">&#11088;4.9 / 120 shifts</div></div>
+                    <div class="hp-worker-card"><div class="wn">Wayan S.</div><div class="wm">&#11088;4.8 / 95 shifts</div></div>
+                    <div class="hp-worker-card"><div class="wn">Ketut A.</div><div class="wm">&#11088;4.8 / 88 shifts</div></div>
+                    <div class="hp-worker-card"><div class="wn">Putu D.</div><div class="wm">&#11088;4.7 / 72 shifts</div></div>
+                    <div class="hp-worker-card"><div class="wn">Kadek M.</div><div class="wm">&#11088;4.6 / 61 shifts</div></div>
+                    <div style="font-size:9px;color:#065F46;margin-top:4px">All BPJS-insured &#10003;</div>
+                  </div>
+                  <div class="hp-btns"><button class="hp-btn-confirm">&#10003; Confirm</button><button class="hp-btn-change">&#128260; Change</button></div>
+                </div></div>
+              </div><div class="hp-home"></div></div>
+            </div>
+          </div>
         </div>
 
         <!-- STEP 4: CONFIRMED -->
@@ -520,6 +602,27 @@
           <div class="step-label" data-i18n="hire.story.s4.label">04 &middot; CONFIRMED</div>
           <h2 data-i18n="hire.story.s4.h2">GPS check-in. Real-time tracking. Zero no-shows.</h2>
           <p class="story-desc" data-i18n="hire.story.s4.p">Workers check in at your venue via GPS. You track arrivals in real-time through WhatsApp. If someone can't make it, we send a replacement immediately.</p>
+          <!-- Mobile phone for step 4 -->
+          <div class="story-panel-phone">
+            <div style="position:relative">
+              <div class="story-badge-m">&#8596;&#65039; Instant backup</div>
+              <div class="hp"><div class="hp-notch"></div><div class="hp-screen">
+                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av">IG</div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
+                <div class="hp-wa-body"><div class="story-screen-state">
+                  <div class="hp-msg in">&#10003; Shift confirmed!
+                    <div class="hp-shift-card">&#128197; Sat, Jun 7 &middot; &#9200; 5-11PM &middot; &#128205; Seminyak</div>
+                    <div class="t">09:18</div>
+                  </div>
+                  <div class="hp-checkin green">&#10003; Made W. &mdash; Checked in 16:48</div>
+                  <div class="hp-checkin green">&#10003; Wayan S. &mdash; Checked in 16:51</div>
+                  <div class="hp-checkin green">&#10003; Ketut A. &mdash; Checked in 16:53</div>
+                  <div class="hp-checkin yellow">&#128993; Putu D. &mdash; En route, ETA 4:58</div>
+                  <div class="hp-checkin yellow">&#128993; Kadek M. &mdash; En route, ETA 4:55</div>
+                  <div class="hp-msg in">5/5 confirmed &#127881; &middot; All BPJS-active &#10003;<div class="t">16:55</div></div>
+                </div></div>
+              </div><div class="hp-home"></div></div>
+            </div>
+          </div>
         </div>
 
       </div>
