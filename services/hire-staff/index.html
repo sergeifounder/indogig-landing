@@ -864,11 +864,12 @@ gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
   const storyDots = document.getElementById('story-dots');
   const hdr = { av: document.getElementById('story-av'), nm: document.getElementById('story-nm'), st: document.getElementById('story-st') };
 
+  const shieldSVG = '<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:15px;height:15px;display:block"><path d="M50 15 C65 15,80 20,80 35 C80 60,65 78,50 85 C35 78,20 60,20 35 C20 20,35 15,50 15 Z" stroke="#0F172A" stroke-width="8" fill="none"/><circle cx="50" cy="38" r="9" fill="#0F172A"/><path d="M38 52 L46 60 L62 42" stroke="#0F172A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>';
   const headers = [
-    { av: 'BS', nm: 'Bali Staffing Group', st: '18 participants' },
-    { av: 'IG', nm: 'IndoGig Staffing', st: 'Online' },
-    { av: 'IG', nm: 'IndoGig Staffing', st: 'Online' },
-    { av: 'IG', nm: 'IndoGig Staffing', st: 'Online' }
+    { av: 'BS', nm: 'Bali Staffing Group', st: '18 participants', isGroup: true },
+    { av: shieldSVG, nm: 'IndoGig Staffing', st: 'Online', isGroup: false },
+    { av: shieldSVG, nm: 'IndoGig Staffing', st: 'Online', isGroup: false },
+    { av: shieldSVG, nm: 'IndoGig Staffing', st: 'Online', isGroup: false }
   ];
 
   let current = -1;
@@ -893,12 +894,17 @@ gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
     // Update phone header with smooth crossfade
     if (hdr.av) {
       gsap.to([hdr.av, hdr.nm, hdr.st], { opacity: 0, duration: 0.15, onComplete: () => {
-        hdr.av.textContent = headers[i].av;
+        hdr.av.innerHTML = headers[i].av;
         hdr.nm.textContent = headers[i].nm;
         hdr.st.textContent = headers[i].st;
-        // Adjust avatar style for group vs IndoGig
-        hdr.av.style.background = i === 0 ? '#64748B' : 'linear-gradient(135deg, #FFB800, #D49B00)';
-        hdr.av.style.fontSize = i === 0 ? '8px' : '10px';
+        // Adjust avatar style for group chat vs IndoGig
+        if (headers[i].isGroup) {
+          hdr.av.style.background = '#64748B';
+          hdr.av.style.fontSize = '8px';
+        } else {
+          hdr.av.style.background = 'linear-gradient(135deg, #FFB800, #D49B00)';
+          hdr.av.style.fontSize = '10px';
+        }
         gsap.to([hdr.av, hdr.nm, hdr.st], { opacity: 1, duration: 0.2 });
       }});
     }
