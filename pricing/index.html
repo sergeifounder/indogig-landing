@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — IndoGig | Transparent Per-Shift Staffing Fees</title>
+<meta name="description" content="Simple per-shift pricing. No monthly minimums. No hidden charges. Compliance included. Get a quote for hospitality staffing in Bali.">
+<link rel="canonical" href="https://indogig.com/pricing/">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="ID-BA">
+<meta name="geo.placename" content="Bali, Indonesia">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://indogig.com/pricing/">
+<meta property="og:title" content="Pricing — IndoGig | Transparent Per-Shift Staffing Fees">
+<meta property="og:description" content="Simple per-shift pricing. No monthly minimums. No hidden charges. Compliance included.">
+<meta property="og:image" content="https://indogig.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing — IndoGig | Transparent Per-Shift Staffing Fees">
+<meta name="twitter:description" content="Simple per-shift pricing. No monthly minimums. No hidden charges.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://indogig.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Pricing",
+      "item": "https://indogig.com/pricing/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing is per-shift, based on role and duration. Contact us via WhatsApp for a quote tailored to your needs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there hidden fees?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The quoted per-shift fee includes worker pay, insurance, vetting, and our service. Nothing extra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weekly bank transfer. You receive an itemized invoice every Monday for the previous week's shifts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a minimum order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Book one shift or one hundred. No contracts, no minimums."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do workers pay anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. IndoGig is completely free for workers."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* Page-specific styles */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--outline);
+}
+.pricing-table thead {
+  background: var(--text);
+  color: #fff;
+}
+.pricing-table th {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pricing-table td {
+  padding: 16px 24px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--outline);
+}
+.pricing-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.pricing-table tbody tr:hover {
+  background: var(--bg-warm);
+}
+.pricing-table .role-cat {
+  font-weight: 700;
+  color: var(--text);
+}
+.pricing-table .shift-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.shift-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--gold-light);
+  border: 1px solid rgba(255,184,0,.15);
+  color: var(--text);
+}
+.volume-note {
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.workers-box {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+.workers-text {
+  flex: 1;
+}
+.workers-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Phone mockup for "What's Included" section */
+.incl-phone-wrap{display:flex;justify-content:center;align-items:center;position:relative}
+.incl-phone-glow{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,.1),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.incl-phone{width:260px;height:520px;background:#fff;border-radius:40px;box-shadow:0 24px 48px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.06);overflow:hidden;position:relative;z-index:2;animation:incl-float 4s ease-in-out infinite}
+@keyframes incl-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.incl-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:110px;height:26px;background:var(--text);border-radius:0 0 16px 16px;z-index:10}
+.incl-screen{position:absolute;inset:4px;border-radius:36px;overflow:hidden;background:#ECE5DD;display:flex;flex-direction:column}
+.incl-home{position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:80px;height:4px;background:#ddd;border-radius:4px;z-index:10}
+.incl-wa-hdr{background:#075E54;padding:32px 12px 8px;display:flex;align-items:center;gap:7px;flex-shrink:0}
+.incl-av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#FFB800,#D49B00);display:grid;place-items:center;font-size:10px;font-weight:700;color:var(--text)}
+.incl-nm{color:#fff;font-size:12px;font-weight:600}
+.incl-st{color:rgba(255,255,255,.5);font-size:8px}
+.incl-wa-body{flex:1;padding:8px;display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.incl-msg{max-width:85%;padding:6px 9px;font-size:10.5px;line-height:1.45;border-radius:8px;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
+.incl-msg.show{opacity:1;transform:translateY(0)}
+.incl-out{background:#DCF8C6;color:#111;align-self:flex-end;border-bottom-right-radius:2px}
+.incl-in{background:#fff;color:#111;align-self:flex-start;border-bottom-left-radius:2px;box-shadow:0 1px 1px rgba(0,0,0,.04)}
+.incl-t{font-size:7.5px;color:#999;text-align:right;margin-top:2px}
+.incl-wc{background:#f0f0f0;border-left:3px solid #10B981;border-radius:4px;padding:4px 7px;margin:2px 0}
+.incl-wn{font-size:9.5px;font-weight:600;color:#111}
+.incl-typing{display:flex;gap:3px;padding:6px 10px;background:#fff;border-radius:8px;border-bottom-left-radius:2px;align-self:flex-start;opacity:0}
+.incl-typing.show{opacity:1}
+.incl-typing span{width:4px;height:4px;border-radius:50%;background:#999;animation:incl-dot .8s infinite}
+.incl-typing span:nth-child(2){animation-delay:.15s}
+.incl-typing span:nth-child(3){animation-delay:.3s}
+@keyframes incl-dot{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+
+@media(max-width:900px) {
+  .pricing-table th,
+  .pricing-table td {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .workers-box {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .incl-phone-wrap { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><img src="../favicon.svg" alt="IndoGig Logo"><span><span class="brand-gold">INDO</span>GIG</span></a>
+    <ul class="nav-links">
+      <li><a href="../services/hire-staff/" data-i18n="nav.hire">Hire Staff</a></li>
+      <li><a href="../services/find-work/" data-i18n="nav.find">Find Work</a></li>
+      <li><a href="../industries/" data-i18n="nav.industries">Industries</a></li>
+      <li><a href="../about/" data-i18n="nav.about">About</a></li>
+      <li><a href="./" class="active" data-i18n="nav.pricing">Pricing</a></li>
+    </ul>
+    <a href="https://wa.me/6281315935800?text=Hi%20IndoGig" class="nav-wa"><span class="material-symbols-outlined" style="font-size:16px">chat</span> <span data-i18n="nav.wa">WhatsApp</span></a>
+    <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+    <button class="nav-mob" aria-label="Menu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</nav>
+
+<!-- BREADCRUMBS -->
+<div style="padding-top:80px" class="section-warm">
+  <div class="container">
+    <div class="breadcrumbs">
+      <a href="../" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="pricing.bc">Pricing</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="padding-top:40px">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <h1 class="gs-reveal" data-i18n="pricing.hero.h1">Transparent <em>pricing.</em></h1>
+        <p class="lead gs-reveal" data-i18n="pricing.hero.lead">Simple per-shift fees. No monthly minimums. No hidden charges. You pay only for completed shifts.</p>
+      </div>
+      <div class="page-hero-img-wrap">
+        <img src="../images/pricing-hero.jpg" alt="Transparent staffing pricing counter in Bali">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW PRICING WORKS -->
+<section class="section">
+  <div class="container">
+    <p class="section-label gs-reveal" data-i18n="pricing.how.label">How It Works</p>
+    <h2 class="section-h2 gs-reveal" data-i18n="pricing.how.h2">How pricing works</h2>
+    <p class="section-sub gs-reveal" data-i18n="pricing.how.sub">Three simple principles behind every quote.</p>
+    <div class="grid-3">
+      <div class="card gs-reveal">
+        <div class="card-icon"><span class="material-symbols-outlined">payments</span></div>
+        <h3 data-i18n="pricing.how.fee.h3">Per-Shift Fee</h3>
+        <p data-i18n="pricing.how.fee.p">You're charged a transparent fee per shift based on the role and duration. No surprises.</p>
+      </div>
+      <div class="card gs-reveal">
+        <div class="card-icon"><span class="material-symbols-outlined">event_available</span></div>
+        <h3 data-i18n="pricing.how.min.h3">No Minimums</h3>
+        <p data-i18n="pricing.how.min.p">Book one shift or one hundred. No monthly commitments. No minimum order size.</p>
+      </div>
+      <div class="card gs-reveal">
+        <div class="card-icon"><span class="material-symbols-outlined">receipt_long</span></div>
+        <h3 data-i18n="pricing.how.invoice.h3">Weekly Invoice</h3>
+        <p data-i18n="pricing.how.invoice.p">Receive a clear, itemized invoice every week. Pay via bank transfer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section section-warm">
+  <div class="container">
+    <div class="split">
+      <div>
+        <p class="section-label gs-reveal" data-i18n="pricing.incl.label">What's Included</p>
+        <h2 class="section-h2 gs-reveal" data-i18n="pricing.incl.h2">Every shift comes with</h2>
+        <p class="section-sub gs-reveal" data-i18n="pricing.incl.sub">No add-ons. No upsells. Everything below is part of the per-shift fee.</p>
+        <div class="perk-list gs-reveal">
+          <div class="perk-item">
+            <div class="perk-ico"><span class="material-symbols-outlined">check</span></div>
+            <span class="perk-text" data-i18n="pricing.incl.perk1">Vetted, rated worker with verified experience</span>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico"><span class="material-symbols-outlined">check</span></div>
+            <span class="perk-text" data-i18n="pricing.incl.perk2">Comprehensive worker compliance</span>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico"><span class="material-symbols-outlined">check</span></div>
+            <span class="perk-text" data-i18n="pricing.incl.perk3">GPS check-in and check-out tracking</span>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico"><span class="material-symbols-outlined">check</span></div>
+            <span class="perk-text" data-i18n="pricing.incl.perk4">Post-shift performance rating</span>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico"><span class="material-symbols-outlined">check</span></div>
+            <span class="perk-text" data-i18n="pricing.incl.perk5">Replacement guarantee if worker doesn't show</span>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico"><span class="material-symbols-outlined">check</span></div>
+            <span class="perk-text" data-i18n="pricing.incl.perk6">Consolidated weekly invoicing</span>
+          </div>
+          <div class="perk-item">
+            <div class="perk-ico"><span class="material-symbols-outlined">check</span></div>
+            <span class="perk-text" data-i18n="pricing.incl.perk7">Dedicated WhatsApp support</span>
+          </div>
+        </div>
+      </div>
+      <div class="incl-phone-wrap gs-reveal">
+        <div class="incl-phone-glow"></div>
+        <div class="incl-phone">
+          <div class="incl-notch"></div>
+          <div class="incl-screen">
+            <div class="incl-wa-hdr">
+              <span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span>
+              <div class="incl-av">IG</div>
+              <div><div class="incl-nm">IndoGig Staffing</div><div class="incl-st">Online</div></div>
+            </div>
+            <div class="incl-wa-body" id="incl-chat">
+              <div class="incl-msg incl-out" id="im1">Hi! I booked 2 waiters for tonight. Are they verified?<div class="incl-t">18:02 &check;&check;</div></div>
+              <div class="incl-typing" id="im-typing"><span></span><span></span><span></span></div>
+              <div class="incl-msg incl-in" id="im2">Yes! Both are fully vetted &check;<div class="incl-t">18:02</div></div>
+              <div class="incl-msg incl-in" id="im3" style="padding-top:2px">
+                <div class="incl-wc"><div class="incl-wn">&check; Compliance cleared</div></div>
+                <div class="incl-wc"><div class="incl-wn">&star; 4.9 rating (85 shifts)</div></div>
+                <div class="incl-wc"><div class="incl-wn">&#128205; GPS check-in at 5:45pm</div></div>
+                <div class="incl-t">18:03</div>
+              </div>
+              <div class="incl-msg incl-out" id="im4">What if someone doesn't show?<div class="incl-t">18:03 &check;&check;</div></div>
+              <div class="incl-msg incl-in" id="im5">&check; <b>Replacement guarantee.</b> We send a backup within 30 minutes. No extra charge.<div class="incl-t">18:04</div></div>
+              <div class="incl-msg incl-out" id="im6">Perfect. And invoicing?<div class="incl-t">18:04 &check;&check;</div></div>
+              <div class="incl-msg incl-in" id="im7">Weekly invoice every Monday &mdash; one clear PDF, bank transfer. &check;<div class="incl-t">18:05</div></div>
+            </div>
+          </div>
+          <div class="incl-home"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="section">
+  <div class="container">
+    <p class="section-label gs-reveal" data-i18n="pricing.tiers.label">Pricing Tiers</p>
+    <h2 class="section-h2 gs-reveal" data-i18n="pricing.tiers.h2">Role categories &amp; shift types</h2>
+    <div class="info-box gs-reveal">
+      <h4 data-i18n="pricing.tiers.info.h4">Simple per-shift pricing. No hidden fees.</h4>
+      <p data-i18n="pricing.tiers.info.p">You pay a single per-shift rate that includes worker pay, vetting, compliance, and our service fee (20%). No markup surprises.</p>
+    </div>
+    <div class="gs-reveal">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th data-i18n="pricing.tiers.th.role">Role</th>
+            <th data-i18n="pricing.tiers.th.rate">Per Shift (8hr)</th>
+            <th data-i18n="pricing.tiers.th.incl">What's Included</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="role-cat">Waiter / Waitress</td>
+            <td>from <strong>Rp 200,000</strong>*</td>
+            <td data-i18n="pricing.tiers.td.incl">Worker pay + vetting + compliance</td>
+          </tr>
+          <tr>
+            <td class="role-cat">Bartender</td>
+            <td>from <strong>Rp 250,000</strong>*</td>
+            <td>Worker pay + vetting + compliance</td>
+          </tr>
+          <tr>
+            <td class="role-cat">Kitchen Hand</td>
+            <td>from <strong>Rp 175,000</strong>*</td>
+            <td>Worker pay + vetting + compliance</td>
+          </tr>
+          <tr>
+            <td class="role-cat">Housekeeper</td>
+            <td>from <strong>Rp 200,000</strong>*</td>
+            <td>Worker pay + vetting + compliance</td>
+          </tr>
+          <tr>
+            <td class="role-cat">Event Staff</td>
+            <td>from <strong>Rp 225,000</strong>*</td>
+            <td>Worker pay + vetting + compliance</td>
+          </tr>
+          <tr>
+            <td class="role-cat">Security</td>
+            <td>from <strong>Rp 225,000</strong>*</td>
+            <td>Worker pay + vetting + compliance</td>
+          </tr>
+          <tr>
+            <td class="role-cat">SPG / Brand Ambassador</td>
+            <td>from <strong>Rp 350,000</strong>*</td>
+            <td data-i18n="pricing.tiers.td.spg">Tiered rates based on profiles. Vetting + compliance included.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:12px">* Per 8-hour shift. Rates based on Badung UMK 2026 (Rp 3,791,003/month) + service fee. Actual rates may vary by venue, experience, and shift type. <a href="https://disnakeresdm.baliprov.go.id" target="_blank" style="color:var(--gold)">Source: Dinas Tenaga Kerja Bali</a></p>
+    </div>
+    <div class="info-box gs-reveal" style="margin-top:24px;background:rgba(255,184,0,.06);border-color:rgba(255,184,0,.2)">
+      <h4 data-i18n="pricing.tiers.quote.h4">Need an exact quote?</h4>
+      <p data-i18n="pricing.tiers.quote.p">Message us on WhatsApp with your shift details (role, date, headcount, location) and we'll send a quote within minutes.</p>
+      <a href="https://wa.me/6281315935800?text=Hi%2C%20I%27d%20like%20a%20pricing%20quote" class="btn-primary" style="margin-top:12px;font-size:13px;padding:12px 24px" data-i18n="pricing.tiers.quote.cta">Get a Quote <span class="material-symbols-outlined" style="font-size:14px">arrow_forward</span></a>
+    </div>
+    <p class="volume-note gs-reveal"><span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle;margin-right:6px;color:var(--gold)">trending_down</span data-i18n="pricing.tiers.volume">Volume discounts available for 10+ shifts per week.</p>
+  </div>
+</section>
+
+<!-- TEMP PLACEMENT -->
+<section class="section">
+  <div class="container">
+    <p class="section-label gs-reveal" data-i18n="pricing.temp.label">Temp Placement</p>
+    <h2 class="section-h2 gs-reveal" data-i18n="pricing.temp.h2">Need workers for longer?</h2>
+    <p class="section-sub gs-reveal" data-i18n="pricing.temp.sub">Beyond single shifts, we offer temp placements for 1-3 months with full PKWT contracts. Same WhatsApp booking, longer commitment, better rates.</p>
+    <div class="grid-3">
+      <div class="card gs-reveal">
+        <div class="card-icon"><span class="material-symbols-outlined">event_available</span></div>
+        <h3 data-i18n="pricing.temp.contract.h3">1-3 Month Contracts</h3>
+        <p data-i18n="pricing.temp.contract.p">PKWT-compliant temporary placement. Worker stays at your venue full-time for the contract period.</p>
+      </div>
+      <div class="card gs-reveal">
+        <div class="card-icon"><span class="material-symbols-outlined">trending_down</span></div>
+        <h3 data-i18n="pricing.temp.cost.h3">Lower Monthly Cost</h3>
+        <p data-i18n="pricing.temp.cost.p">20% monthly fee on worker salary. Significantly cheaper than daily shift booking for regular needs.</p>
+      </div>
+      <div class="card gs-reveal">
+        <div class="card-icon"><span class="material-symbols-outlined">swap_horiz</span></div>
+        <h3 data-i18n="pricing.temp.upgrade.h3">Shift → Temp Upgrade</h3>
+        <p data-i18n="pricing.temp.upgrade.p">Found a great shift worker? Convert them to a temp placement without re-hiring. Seamless transition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WORKERS -->
+<section class="section section-warm">
+  <div class="container">
+    <p class="section-label gs-reveal" data-i18n="pricing.workers.label">For Workers</p>
+    <h2 class="section-h2 gs-reveal" data-i18n="pricing.workers.h2">IndoGig is free for workers</h2>
+    <p style="font-size:16px;color:var(--text-secondary);line-height:1.7;max-width:560px;margin-bottom:24px" class="gs-reveal" data-i18n="pricing.workers.p">No signup fee. No commission from your pay. You earn the full worker rate on every shift.</p>
+    <a href="../services/find-work/" class="btn-primary gs-reveal" data-i18n="pricing.workers.cta">Find Work <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span></a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <p class="section-label gs-reveal" data-i18n="pricing.faq.label">FAQ</p>
+    <h2 class="section-h2 gs-reveal" data-i18n="pricing.faq.h2">Pricing questions</h2>
+    <div style="max-width:800px;margin-top:32px">
+      <details class="faq-item gs-reveal">
+        <summary data-i18n="pricing.faq.q1">How much does it cost?<span class="material-symbols-outlined">expand_more</span></summary>
+        <div class="faq-answer" data-i18n="pricing.faq.a1">Pricing is per-shift, based on role and duration. Contact us via WhatsApp for a quote tailored to your needs.</div>
+      </details>
+      <details class="faq-item gs-reveal">
+        <summary data-i18n="pricing.faq.q2">Are there hidden fees?<span class="material-symbols-outlined">expand_more</span></summary>
+        <div class="faq-answer" data-i18n="pricing.faq.a2">No. The quoted per-shift fee includes worker pay, insurance, vetting, and our service. Nothing extra.</div>
+      </details>
+      <details class="faq-item gs-reveal">
+        <summary data-i18n="pricing.faq.q3">How do I pay?<span class="material-symbols-outlined">expand_more</span></summary>
+        <div class="faq-answer" data-i18n="pricing.faq.a3">Weekly bank transfer. You receive an itemized invoice every Monday for the previous week's shifts.</div>
+      </details>
+      <details class="faq-item gs-reveal">
+        <summary data-i18n="pricing.faq.q4">Is there a minimum order?<span class="material-symbols-outlined">expand_more</span></summary>
+        <div class="faq-answer" data-i18n="pricing.faq.a4">No. Book one shift or one hundred. No contracts, no minimums.</div>
+      </details>
+      <details class="faq-item gs-reveal">
+        <summary data-i18n="pricing.faq.q5">Do workers pay anything?<span class="material-symbols-outlined">expand_more</span></summary>
+        <div class="faq-answer" data-i18n="pricing.faq.a5">No. IndoGig is completely free for workers.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container gs-reveal">
+    <h2 data-i18n="pricing.cta.h2">Ready for a quote?</h2>
+    <p data-i18n="pricing.cta.p">Tell us the roles and dates you need. We'll reply with a clear, itemized quote within hours.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/6281315935800?text=Hi%2C%20I%27d%20like%20a%20pricing%20quote" class="btn-primary" data-i18n="pricing.cta.wa">Get a Quote on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="f-logo"><img src="../favicon.svg" alt="IndoGig Logo"><span><span class="brand-gold">INDO</span>GIG</span></span>
+        <p data-i18n="footer.brand.desc.short">Hospitality staffing for Bali's top venues.</p>
+        <p style="margin-top:8px;font-size:12px;color:var(--text-muted)">Jl. Sunset Road Tengah Building No. 9,<br>Seminyak, Bali 80361</p>
+        <p style="margin-top:6px;font-size:12px;color:var(--text-muted)">info@indogig.com &middot; +62 813-1593-5800</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">Services</h4>
+        <a href="../services/hire-staff/" data-i18n="nav.hire">Hire Staff</a>
+        <a href="../services/find-work/" data-i18n="nav.find">Find Work</a>
+        <a href="../#how-it-works" data-i18n="footer.how">How It Works</a>
+        <a href="./" data-i18n="footer.pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.industries">Industries</h4>
+        <a href="../industries/#hotels" data-i18n="footer.hotels">Hotels</a>
+        <a href="../industries/#beach-clubs" data-i18n="footer.beach">Beach Clubs</a>
+        <a href="../industries/#events" data-i18n="footer.events">Events</a>
+        <a href="../industries/#restaurants" data-i18n="footer.restaurants">Restaurants</a>
+        <a href="../industries/#weddings" data-i18n="footer.weddings">Weddings</a>
+        <a href="../industries/#retail" data-i18n="footer.retail">Retail</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.locations">Locations</h4>
+        <a href="../locations/#seminyak">Seminyak</a>
+        <a href="../locations/#canggu">Canggu</a>
+        <a href="../locations/#kuta">Kuta</a>
+        <a href="../locations/#ubud">Ubud</a>
+        <a href="../locations/#denpasar">Denpasar</a>
+        <a href="../locations/#nusa-dua">Nusa Dua</a>
+        <a href="../locations/#jimbaran">Jimbaran</a>
+        <a href="../locations/#sanur">Sanur</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.company">Company</h4>
+        <a href="../about/" data-i18n="nav.about">About</a>
+        <a href="../contact/" data-i18n="footer.contact">Contact</a>
+        <a href="../privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="../user-agreement.html" data-i18n="footer.terms">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 PT INDOGIG HRTECH INDONESIA</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/indogig.work" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.linkedin.com/company/indogig" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://wa.me/6281315935800" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://www.tiktok.com/@indogig" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Nav glassmorphism on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// GSAP reveal animations
+gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
+  gsap.fromTo(el,
+    { opacity: 0, y: 40, visibility: 'hidden' },
+    { opacity: 1, y: 0, visibility: 'visible', duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+      delay: i % 3 * 0.1
+    }
+  );
+});
+
+/* WhatsApp Chat simulator for "What's Included" */
+(function(){
+  const msgs = ['im1','im-typing','im2','im3','im4','im5','im6','im7'];
+  const delays = [800, 1000, 500, 800, 1000, 800, 900, 700];
+  function resetAll(){
+    msgs.forEach(id => {
+      const el = document.getElementById(id);
+      if(el) el.classList.remove('show');
+    });
+  }
+  function playSequence(){
+    resetAll();
+    let total = 0;
+    msgs.forEach((id, i) => {
+      total += delays[i];
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if(!el) return;
+        el.classList.add('show');
+        if(id === 'im-typing'){
+          setTimeout(() => el.classList.remove('show'), delays[i+1] || 500);
+        }
+      }, total);
+    });
+    const totalTime = delays.reduce((a,b) => a+b, 0);
+    setTimeout(playSequence, totalTime + 5000);
+  }
+  setTimeout(playSequence, 1200);
+})();
+</script>
+<a href="https://wa.me/6281315935800?text=Hi%20IndoGig" class="wa-float" aria-label="Chat on WhatsApp" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.18);z-index:90;transition:transform .2s,box-shadow .2s;text-decoration:none"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<style>.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,.4)}</style>
+<script src="../js/shared.js"></script>
+<script src="../js/lang.js"></script>
+</body>
+</html>

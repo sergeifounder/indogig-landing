@@ -1,0 +1,383 @@
+/* ═══════════════════════════════════════
+   IndoGig — Stitch v2 "Tropical Modernist Authority"
+   ═══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* Gold — primary action, CTAs, accents */
+  --gold:#FFB800;--gold-d:#D49B00;--gold-dark:#7c5800;--gold-light:rgba(255,184,0,.08);
+  /* Text — warm dark tones (not cold navy) */
+  --text:#211b11;--text-secondary:#514532;--text-muted:#64748B;
+  /* Legacy navy aliases */
+  --navy:#0F172A;--navy-800:#1E293B;--navy-700:#334155;--navy-500:#64748B;--navy-400:#94A3B8;--navy-200:#E2E8F0;--navy-100:#F1F5F9;
+  /* Surfaces — warm cream tints */
+  --bg:#fff8f3;--bg-warm:#f9ecdb;--bg-cream:#f3e8d5;--surface-container:#f9ecdb;
+  --card:#ffffff;
+  /* Functional */
+  --green:#10B981;--red:#EF4444;--wa:#25D366;
+  /* Outline */
+  --outline:#E2E8F0;--outline-warm:#d5c4ab;
+  /* Shadows — soft, navy-warm tint */
+  --shadow-sm:0 1px 3px rgba(33,27,17,.04);
+  --shadow-md:0 4px 12px rgba(33,27,17,.05);
+  --shadow-lg:0 12px 32px rgba(33,27,17,.06);
+  --shadow-xl:0 24px 48px rgba(33,27,17,.08);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.material-symbols-outlined{font-family:'Material Symbols Outlined';font-size:24px;font-weight:normal;font-style:normal;display:inline-block;line-height:1;direction:ltr}
+.container{max-width:1280px;margin:0 auto;padding:0 40px}
+a{color:inherit}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:all .4s ease}
+nav.scrolled{background:rgba(255,255,255,.90);backdrop-filter:blur(40px);box-shadow:var(--shadow-sm);padding:12px 0}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-size:20px;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px}
+.nav-logo img{height:28px;width:28px;display:block}
+.nav-logo .brand-gold, .f-logo .brand-gold { color: var(--gold); }
+.nav-links{display:flex;gap:32px;align-items:center;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-wa{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--text);font-size:13px;font-weight:700;padding:10px 22px;border-radius:100px;text-decoration:none;transition:all .2s;border:none;cursor:pointer}
+.nav-wa:hover{background:var(--gold-d);transform:translateY(-1px);box-shadow:0 4px 12px rgba(255,184,0,.3)}
+.nav-mob{display:none;background:none;border:none;color:var(--text);cursor:pointer}
+.lang-toggle{background:none;border:1.5px solid var(--outline);color:var(--text);font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;cursor:pointer;transition:all .2s;letter-spacing:.04em}
+.lang-toggle:hover{background:var(--gold-light);border-color:var(--gold)}
+
+/* ── GSAP ── */
+.gs-reveal{opacity:0;transform:translateY(40px);visibility:hidden}
+.gs-reveal-img{opacity:0;transform:scale(.95);visibility:hidden}
+
+/* ── SECTIONS ── */
+.section{padding:120px 0}
+.section-warm{background:var(--bg-warm)}
+.section-cream{background:var(--bg-cream)}
+.section-dark{background:var(--navy);color:#fff}
+.section-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+.section-h2{font-size:clamp(32px,4vw,48px);font-weight:700;line-height:1.2;letter-spacing:-.03em;margin-bottom:16px}
+.section-sub{font-size:17px;line-height:1.7;color:var(--text-secondary);max-width:520px;margin-bottom:48px}
+
+/* ── PAGE HERO ── */
+.page-hero{padding:160px 0 80px;background:var(--bg-warm);position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-40%;right:-15%;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,.06),transparent 70%);pointer-events:none}
+.page-hero h1{font-size:clamp(40px,5vw,60px);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:16px}
+.page-hero h1 em{font-style:normal;color:var(--gold)}
+.page-hero .lead{font-size:18px;line-height:1.7;color:var(--text-secondary);max-width:560px}
+
+/* ── BREADCRUMBS ── */
+.breadcrumbs{padding:12px 0;font-size:13px;color:var(--text-muted)}
+.breadcrumbs a{color:var(--navy-500);text-decoration:none;transition:color .2s}
+.breadcrumbs a:hover{color:var(--text)}
+.breadcrumbs span{margin:0 8px;color:var(--outline)}
+
+/* ── BUTTONS ── */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--text);font-size:15px;font-weight:700;padding:16px 32px;border-radius:100px;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--gold-d);transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,184,0,.25)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);font-size:15px;font-weight:600;padding:16px 32px;border-radius:100px;text-decoration:none;border:1.5px solid var(--outline);transition:all .25s}
+.btn-secondary:hover{border-color:var(--text-muted);background:var(--navy-100)}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;font-size:15px;font-weight:700;padding:16px 32px;border-radius:100px;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+.btn-wa:hover{opacity:.9;transform:translateY(-2px)}
+
+/* ── CARDS ── */
+.card{background:var(--card);border:1px solid var(--outline);border-radius:16px;padding:32px;transition:box-shadow .3s,transform .3s}
+.card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.card-icon{width:48px;height:48px;border-radius:12px;background:var(--gold-light);border:1px solid rgba(255,184,0,.15);display:grid;place-items:center;margin-bottom:16px}
+.card-icon .material-symbols-outlined{font-size:22px;color:var(--gold)}
+.card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
+.card p{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* ── PERK LIST ── */
+.perk-list{display:flex;flex-direction:column;gap:16px;margin-bottom:32px}
+.perk-item{display:flex;gap:12px;align-items:flex-start}
+.perk-ico{width:32px;height:32px;border-radius:8px;background:var(--gold-light);border:1px solid rgba(255,184,0,.15);display:grid;place-items:center;flex-shrink:0}
+.perk-ico .material-symbols-outlined{font-size:16px;color:var(--gold)}
+.perk-text{font-size:15px;font-weight:500;color:var(--text);line-height:1.4}
+
+/* ── GRID LAYOUTS ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* ── SPLIT ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.split.flip{direction:rtl}.split.flip>*{direction:ltr}
+
+/* ── FAQ ── */
+.faq-item{border-bottom:1px solid var(--outline)}
+.faq-item summary{list-style:none;cursor:pointer;padding:22px 0;font-size:17px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;transition:color .2s}
+.faq-item summary:hover{color:var(--gold-d)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .material-symbols-outlined{color:var(--text-muted);transition:transform .3s,color .3s}
+.faq-item[open] summary .material-symbols-outlined{transform:rotate(180deg);color:var(--gold)}
+.faq-answer{padding:0 0 22px;font-size:15px;color:var(--text-secondary);line-height:1.7;max-width:640px}
+
+/* ── INFO BOX ── */
+.info-box{background:var(--bg-warm);border:1px solid var(--outline);border-radius:16px;padding:32px;margin:32px 0}
+.info-box h4{font-size:16px;font-weight:700;margin-bottom:8px}
+.info-box p{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* ── CTA SECTION ── */
+.cta-section{padding:100px 0;background:var(--navy);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(255,184,0,.08),transparent 65%);pointer-events:none}
+.cta-section h2{font-size:clamp(32px,4vw,48px);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-bottom:16px}
+.cta-section p{font-size:17px;color:rgba(255,255,255,.5);margin-bottom:32px;max-width:440px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+.site-footer{border-top:1px solid var(--outline);background:var(--bg)}
+.footer-main{padding:60px 0 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.footer-brand{max-width:240px}
+.footer-brand .f-logo{font-size:18px;font-weight:800;color:var(--text);letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px;margin-bottom:12px}
+.footer-brand .f-logo img{height:24px;width:24px;display:block}
+.footer-brand p{font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:var(--text-secondary);text-decoration:none;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{padding:20px 0;border-top:1px solid var(--outline);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:var(--text-muted)}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:32px;height:32px;border-radius:50%;background:var(--bg-warm);border:1px solid var(--outline);display:grid;place-items:center;color:var(--text-secondary);transition:all .2s;text-decoration:none}
+.footer-social a:hover{background:var(--gold-light);color:var(--gold)}
+.footer-social svg{width:14px;height:14px;fill:currentColor}
+
+/* ── PAGE HERO GRID ── */
+.page-hero-inner{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.page-hero-content{flex:1;min-width:300px;max-width:640px}
+.page-hero-img-wrap{flex:0 1 400px;max-height:280px;overflow:hidden;border-radius:20px;box-shadow:var(--shadow-lg)}
+.page-hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.page-hero-img-wrap:empty{display:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .container{padding:0 20px}
+  .nav-inner{padding:0 20px}
+  .nav-links{display:none;position:fixed;inset:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:200;padding:40px}
+  .nav-links.open{display:flex}
+  .nav-links.open a{font-size:20px;font-weight:600;color:var(--text)}
+  .nav-mob{display:block;z-index:201}
+  .section{padding:80px 0}
+  .page-hero{padding:120px 0 60px}
+  .page-hero{padding:100px 0 40px}
+  .page-hero-inner{flex-direction:column;gap:20px}
+  .page-hero-img-wrap{flex:none;width:100%;max-height:180px}
+  .grid-2,.grid-3,.grid-4,.split{grid-template-columns:1fr}
+  .split.flip{direction:ltr}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .btn-primary,.btn-secondary,.btn-wa{width:100%;justify-content:center}
+  
+  /* Mobile styling overrides for new modules */
+  .floating-notif { display: none; }
+  .img-zoom-wrap { height: 200px; }
+  .hero-image-container { max-width: 100%; }
+  .hero-image-wrap { height: 240px; }
+  .polaroid-img { height: 220px; }
+}
+
+/* ═══════════════════════════════════════
+   IndoGig — Style Expansion (Bali Luxury Tech)
+   ═══════════════════════════════════════ */
+
+/* Image Zoom Wrapper */
+.img-zoom-wrap {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--outline-warm);
+}
+.img-zoom-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+}
+.img-zoom-wrap:hover img {
+  transform: scale(1.05);
+}
+
+/* Glassmorphic Badge */
+.glass-badge {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: 0 8px 24px rgba(33, 27, 17, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.glass-badge:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* Glassmorphic Card Overlay (for Homepage Industries) */
+.glass-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.3) 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 24px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+.ind-card:hover .glass-overlay {
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.4) 100%);
+  backdrop-filter: blur(8px);
+}
+
+/* Layered Hero Image Container */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-xl);
+  overflow: visible;
+}
+.hero-image-wrap {
+  width: 100%;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1.5px solid var(--outline-warm);
+}
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floating WhatsApp Notification */
+.floating-notif {
+  position: absolute;
+  bottom: 24px;
+  left: -24px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 16px;
+  box-shadow: 0 12px 36px rgba(33, 27, 17, 0.12);
+  border: 1px solid rgba(255, 184, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+  animation: float-bounce 6s ease-in-out infinite;
+  max-width: 280px;
+}
+@keyframes float-bounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-8px) scale(1.02); }
+}
+.notif-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--text);
+  font-weight: 800;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.notif-body {
+  display: flex;
+  flex-direction: column;
+}
+.notif-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+.notif-text {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.notif-time {
+  font-size: 9px;
+  color: var(--text-muted);
+  align-self: flex-start;
+  margin-left: auto;
+}
+
+/* Polaroid Photo Style (for pricing page) */
+.polaroid-card {
+  background: #ffffff;
+  padding: 16px 16px 24px 16px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--outline-warm);
+  transform: rotate(-1.5deg);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.polaroid-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+}
+.polaroid-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.polaroid-caption {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 14px;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+/* Pulsing map pin overlay */
+.pulse-pin {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--gold);
+  animation: pulse-glow 2s infinite;
+}
+.pulse-pin::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  top: -6px;
+  left: -6px;
+  animation: pulse-ring 2s infinite;
+}
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 184, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+

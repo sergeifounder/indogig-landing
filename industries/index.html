@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries We Serve — IndoGig | Hospitality Staffing in Bali</title>
+<meta name="description" content="IndoGig provides verified staff for hotels, beach clubs, events, restaurants, weddings, and retail venues across Bali.">
+<link rel="canonical" href="https://indogig.com/industries/">
+<meta name="robots" content="index, follow">
+<meta name="geo.region" content="ID-BA">
+<meta name="geo.placename" content="Bali, Indonesia">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://indogig.com/industries/">
+<meta property="og:title" content="Industries We Serve — IndoGig Staffing">
+<meta property="og:description" content="Specialized hospitality staffing for every venue type in Bali.">
+<meta property="og:image" content="https://indogig.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Industries We Serve — IndoGig Staffing">
+<meta name="twitter:description" content="Specialized hospitality staffing for every venue type in Bali.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://indogig.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Industries",
+      "item": "https://indogig.com/industries/"
+    }
+  ]
+}
+</script>
+
+<style>
+/* Page-specific: industry cards */
+.industry-card {
+  background: var(--bg);
+  border: 1px solid var(--outline);
+  border-radius: 16px;
+  padding: 40px;
+  transition: box-shadow .3s, transform .3s;
+}
+.industry-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.industry-card .card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold-light);
+  border: 1px solid rgba(255,184,0,.15);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+.industry-card .card-icon .material-symbols-outlined {
+  font-size: 26px;
+  color: var(--gold);
+}
+.industry-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.industry-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.industry-card .roles-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.industry-card .roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.industry-card .roles span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--surface-container);
+  border: 1px solid var(--outline);
+  padding: 5px 14px;
+  border-radius: 100px;
+}
+.steps-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+.step-item {
+  text-align: center;
+}
+.step-num {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 800;
+  display: inline-grid;
+  place-items: center;
+  margin-bottom: 16px;
+}
+.step-item h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.step-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .steps-row { grid-template-columns: 1fr; }
+  .industry-card { padding: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><img src="../favicon.svg" alt="IndoGig Logo"><span><span class="brand-gold">INDO</span>GIG</span></a>
+    <ul class="nav-links">
+      <li><a href="../services/hire-staff/" data-i18n="nav.hire">Hire Staff</a></li>
+      <li><a href="../services/find-work/" data-i18n="nav.find">Find Work</a></li>
+      <li><a href="./" class="active" data-i18n="nav.industries">Industries</a></li>
+      <li><a href="../about/" data-i18n="nav.about">About</a></li>
+      <li><a href="../pricing/" data-i18n="nav.pricing">Pricing</a></li>
+    </ul>
+    <a href="https://wa.me/6281315935800?text=Hi%20IndoGig" class="nav-wa"><span class="material-symbols-outlined" style="font-size:16px">chat</span> <span data-i18n="nav.wa">WhatsApp</span></a>
+    <button class="lang-toggle" onclick="toggleLang()" aria-label="Switch language">EN</button>
+    <button class="nav-mob" aria-label="Menu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+</nav>
+
+<!-- BREADCRUMBS -->
+<div style="padding-top:80px" class="section-warm">
+  <div class="container">
+    <div class="breadcrumbs">
+      <a href="../" data-i18n="nav.home">Home</a><span>/</span><span data-i18n="ind.bc">Industries</span>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero" style="padding-top:40px">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="page-hero-content">
+        <h1 class="gs-reveal" data-i18n="ind.hero.h1">Hospitality staffing for <em>every venue in Bali.</em></h1>
+        <p class="lead gs-reveal" data-i18n="ind.hero.lead">From five-star hotels to beachfront weddings — IndoGig provides verified staff tailored to your industry.</p>
+      </div>
+      <div class="page-hero-img-wrap">
+        <img src="../images/industries-hero.jpg" alt="Specialized staffing in Bali">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INDUSTRY CARDS -->
+<section class="section">
+  <div class="container">
+    <p class="section-label gs-reveal" data-i18n="ind.section.label">Industries</p>
+    <h2 class="section-h2 gs-reveal" data-i18n="ind.section.h2">Who we work with</h2>
+    <p class="section-sub gs-reveal" data-i18n="ind.section.sub">Six sectors, one standard: verified, insured, and ready to work.</p>
+
+    <div class="grid-2">
+
+      <!-- Hotels & Resorts -->
+      <div class="industry-card gs-reveal" id="hotels">
+        <div class="img-zoom-wrap" style="height: 200px; border-radius: 12px; margin-bottom: 20px;">
+          <img src="../images/hotel-lobby.jpg" alt="Hotels & Resorts">
+        </div>
+        <div class="card-icon"><span class="material-symbols-outlined">hotel</span></div>
+        <h3 data-i18n="ind.hotels.h3">Hotels &amp; Resorts</h3>
+        <p data-i18n="ind.hotels.p">Bali's hotels and resorts need reliable staff year-round. From front desk to banquet service, we provide experienced professionals who understand luxury hospitality standards.</p>
+        <div class="roles-label" data-i18n="ind.hotels.roles">Roles we fill:</div>
+        <div class="roles">
+          <span>Waiter</span>
+          <span>Housekeeping</span>
+          <span>Front Desk</span>
+          <span>Banquet Staff</span>
+          <span>Concierge</span>
+          <span>Room Service</span>
+        </div>
+      </div>
+
+      <!-- Beach Clubs -->
+      <div class="industry-card gs-reveal" id="beach-clubs">
+        <div class="img-zoom-wrap" style="height: 200px; border-radius: 12px; margin-bottom: 20px;">
+          <img src="../images/beach-club.jpg" alt="Beach Clubs">
+        </div>
+        <div class="card-icon"><span class="material-symbols-outlined">beach_access</span></div>
+        <h3 data-i18n="ind.beach.h3">Beach Clubs</h3>
+        <p data-i18n="ind.beach.p">Bali's beach clubs are high-volume, fast-paced environments that demand experienced staff. We supply bartenders, hosts, and security trained to deliver at scale.</p>
+        <div class="roles-label" data-i18n="ind.beach.roles">Roles we fill:</div>
+        <div class="roles">
+          <span>Bartender</span>
+          <span>Host/Hostess</span>
+          <span>Security</span>
+          <span>Pool Attendant</span>
+          <span>DJ Support</span>
+          <span>Cashier</span>
+        </div>
+      </div>
+
+      <!-- Events & MICE -->
+      <div class="industry-card gs-reveal" id="events">
+        <div class="img-zoom-wrap" style="height: 200px; border-radius: 12px; margin-bottom: 20px;">
+          <img src="../images/event-mice.jpg" alt="Events & MICE">
+        </div>
+        <div class="card-icon"><span class="material-symbols-outlined">celebration</span></div>
+        <h3 data-i18n="ind.events.h3">Events &amp; MICE</h3>
+        <p data-i18n="ind.events.p">Conferences, corporate retreats, product launches. Bali hosts thousands of events annually. We scale your team up or down based on event size — teams of any size.</p>
+        <div class="roles-label" data-i18n="ind.events.roles">Roles we fill:</div>
+        <div class="roles">
+          <span>Event Crew</span>
+          <span>Coordinator</span>
+          <span>Setup Crew</span>
+          <span>AV Support</span>
+          <span>Registration Staff</span>
+          <span>Usher</span>
+        </div>
+      </div>
+
+      <!-- Restaurants & Cafes -->
+      <div class="industry-card gs-reveal" id="restaurants">
+        <div class="img-zoom-wrap" style="height: 200px; border-radius: 12px; margin-bottom: 20px;">
+          <img src="../images/restaurant.jpg" alt="Restaurants & Cafes">
+        </div>
+        <div class="card-icon"><span class="material-symbols-outlined">restaurant</span></div>
+        <h3 data-i18n="ind.restaurants.h3">Restaurants &amp; Cafes</h3>
+        <p data-i18n="ind.restaurants.p">Bali's dining scene is booming. Whether you're a fine-dining restaurant in Seminyak or a cafe in Canggu, we provide servers, baristas, and kitchen support on demand.</p>
+        <div class="roles-label" data-i18n="ind.restaurants.roles">Roles we fill:</div>
+        <div class="roles">
+          <span>Server</span>
+          <span>Barista</span>
+          <span>Kitchen Hand</span>
+          <span>Cashier</span>
+          <span>Food Runner</span>
+          <span>Dishwasher</span>
+        </div>
+      </div>
+
+      <!-- Weddings -->
+      <div class="industry-card gs-reveal" id="weddings">
+        <div class="img-zoom-wrap" style="height: 200px; border-radius: 12px; margin-bottom: 20px;">
+          <img src="../images/wedding.jpg" alt="Weddings">
+        </div>
+        <div class="card-icon"><span class="material-symbols-outlined">favorite</span></div>
+        <h3 data-i18n="ind.weddings.h3">Weddings</h3>
+        <p data-i18n="ind.weddings.p">Bali is one of the world's top destination wedding locations. We provide ceremony staff, catering support, and setup crews who know how to make every detail perfect.</p>
+        <div class="roles-label" data-i18n="ind.weddings.roles">Roles we fill:</div>
+        <div class="roles">
+          <span>Waiter</span>
+          <span>Setup Crew</span>
+          <span>Coordinator</span>
+          <span>Catering Staff</span>
+          <span>Driver</span>
+          <span>Decoration Support</span>
+        </div>
+      </div>
+
+      <!-- Retail & Promotions -->
+      <div class="industry-card gs-reveal" id="retail">
+        <div class="img-zoom-wrap" style="height: 200px; border-radius: 12px; margin-bottom: 20px;">
+          <img src="../images/retail-promo.jpg" alt="Retail & Promotions">
+        </div>
+        <div class="card-icon"><span class="material-symbols-outlined">store</span></div>
+        <h3 data-i18n="ind.retail.h3">Retail &amp; Promotions</h3>
+        <p data-i18n="ind.retail.p">Brand activations, pop-up stores, product launches. We supply trained SPG/SPB and brand ambassadors who represent your brand professionally.</p>
+        <div class="roles-label" data-i18n="ind.retail.roles">Roles we fill:</div>
+        <div class="roles">
+          <span>SPG/SPB</span>
+          <span>Brand Ambassador</span>
+          <span>Cashier</span>
+          <span>Merchandiser</span>
+          <span>Demonstrator</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section-warm">
+  <div class="container">
+    <p class="section-label gs-reveal" data-i18n="ind.how.label">How It Works</p>
+    <h2 class="section-h2 gs-reveal" data-i18n="ind.how.h2">Three steps. Any industry.</h2>
+    <p class="section-sub gs-reveal" data-i18n="ind.how.sub">The same simple process, no matter your venue type.</p>
+    <div class="steps-row">
+      <div class="step-item gs-reveal">
+        <div class="step-num">1</div>
+        <h3 data-i18n="ind.how.s1.h3">Message us on WhatsApp</h3>
+        <p data-i18n="ind.how.s1.p">Tell us your industry, roles needed, dates, and location. We respond within minutes.</p>
+      </div>
+      <div class="step-item gs-reveal">
+        <div class="step-num">2</div>
+        <h3 data-i18n="ind.how.s2.h3">We match verified staff</h3>
+        <p data-i18n="ind.how.s2.p">Our team selects verified workers with experience in your specific industry.</p>
+      </div>
+      <div class="step-item gs-reveal">
+        <div class="step-num">3</div>
+        <h3 data-i18n="ind.how.s3.h3">Staff arrives, you rate</h3>
+        <p data-i18n="ind.how.s3.p">Workers show up ready to work. After the shift, you rate their performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container gs-reveal">
+    <h2 data-i18n="ind.cta.h2">Need staff for your venue?</h2>
+    <p data-i18n="ind.cta.p">Tell us your industry and we'll match the right people — fast.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/6281315935800?text=Hi%20IndoGig%2C%20I%20need%20to%20hire%20staff" class="btn-primary" data-i18n="ind.cta.hire">Hire Staff on WhatsApp</a>
+      <a href="../services/find-work/" class="btn-secondary" style="color:#fff;border-color:rgba(255,255,255,.2)">Find Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <span class="f-logo"><img src="../favicon.svg" alt="IndoGig Logo"><span><span class="brand-gold">INDO</span>GIG</span></span>
+        <p data-i18n="footer.brand.desc.short">Hospitality staffing for Bali's top venues.</p>
+        <p style="margin-top:8px;font-size:12px;color:var(--text-muted)">Jl. Sunset Road Tengah Building No. 9,<br>Seminyak, Bali 80361</p>
+        <p style="margin-top:6px;font-size:12px;color:var(--text-muted)">info@indogig.com &middot; +62 813-1593-5800</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.services">Services</h4>
+        <a href="../services/hire-staff/" data-i18n="nav.hire">Hire Staff</a>
+        <a href="../services/find-work/" data-i18n="nav.find">Find Work</a>
+        <a href="../#how-it-works" data-i18n="footer.how">How It Works</a>
+        <a href="../pricing/" data-i18n="nav.pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.industries">Industries</h4>
+        <a href="#hotels" data-i18n="footer.hotels">Hotels</a>
+        <a href="#beach-clubs" data-i18n="footer.beach">Beach Clubs</a>
+        <a href="#events" data-i18n="footer.events">Events</a>
+        <a href="#restaurants" data-i18n="footer.restaurants">Restaurants</a>
+        <a href="#weddings" data-i18n="footer.weddings">Weddings</a>
+        <a href="#retail" data-i18n="footer.retail">Retail</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.locations">Locations</h4>
+        <a href="../locations/#seminyak">Seminyak</a>
+        <a href="../locations/#canggu">Canggu</a>
+        <a href="../locations/#kuta">Kuta</a>
+        <a href="../locations/#ubud">Ubud</a>
+        <a href="../locations/#denpasar">Denpasar</a>
+        <a href="../locations/#nusa-dua">Nusa Dua</a>
+        <a href="../locations/#jimbaran">Jimbaran</a>
+        <a href="../locations/#sanur">Sanur</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.company">Company</h4>
+        <a href="../about/" data-i18n="nav.about">About</a>
+        <a href="../contact/" data-i18n="footer.contact">Contact</a>
+        <a href="../privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="../user-agreement.html" data-i18n="footer.terms">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 PT INDOGIG HRTECH INDONESIA</span>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/indogig.work" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://www.linkedin.com/company/indogig" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://wa.me/6281315935800" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://www.tiktok.com/@indogig" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+      <div style="display:flex;gap:8px;font-size:12px;font-weight:600;color:var(--text-muted)">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+// Nav glassmorphism on scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// GSAP reveal animations
+gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
+  gsap.fromTo(el,
+    { opacity: 0, y: 40, visibility: 'hidden' },
+    { opacity: 1, y: 0, visibility: 'visible', duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+      delay: i % 3 * 0.1
+    }
+  );
+});
+
+// Industry cards stagger
+gsap.utils.toArray('.industry-card').forEach((card, i) => {
+  gsap.fromTo(card,
+    { opacity: 0, y: 50, visibility: 'hidden' },
+    { opacity: 1, y: 0, visibility: 'visible', duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: card, start: 'top 88%', toggleActions: 'play none none none' },
+      delay: i * 0.12
+    }
+  );
+});
+</script>
+<a href="https://wa.me/6281315935800?text=Hi%20IndoGig" class="wa-float" aria-label="Chat on WhatsApp" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.18);z-index:90;transition:transform .2s,box-shadow .2s;text-decoration:none"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<style>.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,.4)}</style>
+<script src="../js/shared.js"></script>
+<script src="../js/lang.js"></script>
+</body>
+</html>
