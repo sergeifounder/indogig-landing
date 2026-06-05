@@ -239,17 +239,26 @@
   margin: 0 auto;
   padding: 0 24px;
 }
-.story-panels { display: flex; flex-direction: column; }
+.story-panels { display: flex; flex-direction: column; scroll-snap-type: y proximity; }
 .story-panel {
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  opacity: 0.25;
-  transform: translateY(20px);
-  transition: opacity .5s ease, transform .5s ease;
+  scroll-snap-align: center;
 }
-.story-panel.active {
+.story-panel .step-label,
+.story-panel h2,
+.story-panel .story-desc,
+.story-panel .story-bullets {
+  opacity: 0.15;
+  transform: translateY(12px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.story-panel.active .step-label,
+.story-panel.active h2,
+.story-panel.active .story-desc,
+.story-panel.active .story-bullets {
   opacity: 1;
   transform: translateY(0);
 }
@@ -300,8 +309,9 @@
   display: none;
   flex-direction: column;
   gap: 5px;
+  opacity: 0;
 }
-.story-screen-state.active { display: flex; }
+.story-screen-state.active { display: flex; opacity: 1; }
 /* Messages inside story screens are always visible (no .show animation needed) */
 .story-screen-state .hp-msg,
 .story-screen-state .hp-typing {
@@ -568,7 +578,7 @@
             <div style="position:relative">
               <div class="story-badge-m">&#9201; Minutes, not hours</div>
               <div class="hp"><div class="hp-notch"></div><div class="hp-screen">
-                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av">IG</div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
+                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 15px; height: 15px; display: block;"><path d="M50 15 C65 15, 80 20, 80 35 C80 60, 65 78, 50 85 C35 78, 20 60, 20 35 C20 20, 35 15, 50 15 Z" stroke="#0F172A" stroke-width="8" fill="none" /><circle cx="50" cy="38" r="9" fill="#0F172A" /><path d="M38 52 L46 60 L62 42" stroke="#0F172A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg></div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
                 <div class="hp-wa-body"><div class="story-screen-state">
                   <div class="hp-msg out">Need 5 waiters for Saturday dinner service, Seminyak, 5pm-11pm<div class="t">09:14 &#10003;&#10003;</div></div>
                   <div class="hp-msg in">Got it! &#10003; Checking our verified pool...<div class="t">09:14</div></div>
@@ -594,7 +604,7 @@
             <div style="position:relative">
               <div class="story-badge-m">&#11088; Every worker rated</div>
               <div class="hp"><div class="hp-notch"></div><div class="hp-screen">
-                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av">IG</div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
+                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 15px; height: 15px; display: block;"><path d="M50 15 C65 15, 80 20, 80 35 C80 60, 65 78, 50 85 C35 78, 20 60, 20 35 C20 20, 35 15, 50 15 Z" stroke="#0F172A" stroke-width="8" fill="none" /><circle cx="50" cy="38" r="9" fill="#0F172A" /><path d="M38 52 L46 60 L62 42" stroke="#0F172A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg></div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
                 <div class="hp-wa-body"><div class="story-screen-state">
                   <div class="hp-msg in">Found 5 rated waiters available:<div class="t">09:15</div></div>
                   <div class="hp-msg in" style="padding:4px 6px">
@@ -622,7 +632,7 @@
             <div style="position:relative">
               <div class="story-badge-m">&#8596;&#65039; Instant backup</div>
               <div class="hp"><div class="hp-notch"></div><div class="hp-screen">
-                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av">IG</div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
+                <div class="hp-wa-hdr"><span style="color:rgba(255,255,255,.5);font-size:16px">&larr;</span><div class="av"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 15px; height: 15px; display: block;"><path d="M50 15 C65 15, 80 20, 80 35 C80 60, 65 78, 50 85 C35 78, 20 60, 20 35 C20 20, 35 15, 50 15 Z" stroke="#0F172A" stroke-width="8" fill="none" /><circle cx="50" cy="38" r="9" fill="#0F172A" /><path d="M38 52 L46 60 L62 42" stroke="#0F172A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none" /></svg></div><div><div class="nm">IndoGig Staffing</div><div class="st">Online</div></div></div>
                 <div class="hp-wa-body"><div class="story-screen-state">
                   <div class="hp-msg in">&#10003; Shift confirmed!
                     <div class="hp-shift-card">&#128197; Sat, Jun 7 &middot; &#9200; 5-11PM &middot; &#128205; Seminyak</div>
@@ -861,19 +871,37 @@ gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
     { av: 'IG', nm: 'IndoGig Staffing', st: 'Online' }
   ];
 
-  let current = 0;
+  let current = -1;
 
   function setActiveStep(i) {
     if (i === current) return;
+    // Fade out old screen
+    if (current >= 0 && screens[current]) {
+      gsap.to(screens[current], { opacity: 0, duration: 0.25, onComplete: function() {
+        screens[current]?.classList.remove('active');
+      }});
+    }
     current = i;
     panels.forEach((p, idx) => p.classList.toggle('active', idx === i));
-    screens.forEach((s, idx) => s.classList.toggle('active', idx === i));
+    // Fade in new screen
+    if (screens[i]) {
+      screens[i].classList.add('active');
+      gsap.fromTo(screens[i], { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.15 });
+    }
     badges.forEach((b, idx) => b.classList.toggle('active', idx === i));
     dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
-    // Update phone header
-    if (hdr.av) hdr.av.textContent = headers[i].av;
-    if (hdr.nm) hdr.nm.textContent = headers[i].nm;
-    if (hdr.st) hdr.st.textContent = headers[i].st;
+    // Update phone header with smooth crossfade
+    if (hdr.av) {
+      gsap.to([hdr.av, hdr.nm, hdr.st], { opacity: 0, duration: 0.15, onComplete: () => {
+        hdr.av.textContent = headers[i].av;
+        hdr.nm.textContent = headers[i].nm;
+        hdr.st.textContent = headers[i].st;
+        // Adjust avatar style for group vs IndoGig
+        hdr.av.style.background = i === 0 ? '#64748B' : 'linear-gradient(135deg, #FFB800, #D49B00)';
+        hdr.av.style.fontSize = i === 0 ? '8px' : '10px';
+        gsap.to([hdr.av, hdr.nm, hdr.st], { opacity: 1, duration: 0.2 });
+      }});
+    }
   }
 
   // Show/hide dots only when story section is in view
@@ -907,6 +935,9 @@ gsap.utils.toArray('.gs-reveal').forEach((el, i) => {
 
   // Hide dots initially
   if(storyDots) storyDots.style.display = 'none';
+
+  // Force first step active on load (current is -1, so this will fire)
+  setActiveStep(0);
 })();
 </script>
 <a href="https://wa.me/6281315935800?text=Hi%20IndoGig" class="wa-float" aria-label="Chat on WhatsApp" style="position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 16px rgba(0,0,0,.18);z-index:90;transition:transform .2s,box-shadow .2s;text-decoration:none"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
