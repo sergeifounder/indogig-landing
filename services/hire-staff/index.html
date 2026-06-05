@@ -300,6 +300,12 @@
   gap: 5px;
 }
 .story-screen-state.active { display: flex; }
+/* Messages inside story screens are always visible (no .show animation needed) */
+.story-screen-state .hp-msg,
+.story-screen-state .hp-typing {
+  opacity: 1;
+  transform: none;
+}
 /* Badge floating next to phone */
 .story-badge {
   position: absolute;
@@ -443,6 +449,13 @@
   }
   .story-panel-phone .story-screen-state {
     display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .story-panel-phone .hp-msg,
+  .story-panel-phone .hp-typing {
+    opacity: 1 !important;
+    transform: none !important;
   }
   .story-panel-phone .story-badge-m {
     position: absolute;
