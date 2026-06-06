@@ -54,6 +54,10 @@
     'home.proof.districts': '8 Kecamatan di Bali',
     'home.proof.industries': '6 Industri Dilayani',
 
+    'home.fbadge.fill': '<span class="fb-icon">&#9201;</span> Staffing hari yang sama',
+    'home.fbadge.verified': '<span class="fb-icon">&#10003;</span> PT Terdaftar',
+    'home.fbadge.rated': '<span class="fb-icon">&#11088;</span> Pekerja terverifikasi',
+
     'home.paths.biz.label': 'Untuk Bisnis',
     'home.paths.biz.h2': 'Butuh tenaga kerja hospitality?',
     'home.paths.biz.p': 'Pekerja terverifikasi untuk shift atau penempatan sementara. Satu pesan WhatsApp — kami urus semuanya.',
