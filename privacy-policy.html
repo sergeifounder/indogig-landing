@@ -125,36 +125,25 @@
             .legal-content th, .legal-content td { padding: 0.4rem 0.5rem; }
             nav .nav-links a { margin-left: 0.75rem; font-size: 0.8rem; }
         }
-        .pilot-context { background: #fff7e5; border: 1px solid #ead5a9; padding: 1rem; border-radius: 8px; margin-bottom: 1.25rem; }
-        .pilot-context p { margin: .3rem 0 0; }
-        .legal-content { overflow-wrap: anywhere; }
-        @media (max-width: 640px) {
-            nav { position: static; flex-wrap: wrap; gap: .4rem; padding: .65rem 1rem; }
-            nav .nav-links { flex-wrap: wrap; gap: .65rem; }
-            nav .nav-links a, .lang-switch { margin-left: 0; }
-            .lang-switch button { min-height: 44px; }
-            .container { padding-top: 1.5rem; }
-        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="/" class="logo"><img src="favicon.svg" alt="Indogig Logo" style="height: 28px; width: 28px; vertical-align: middle; margin-right: 8px; display: inline-block;"><span><span style="color: var(--primary-yellow);">INDO</span>GIG</span></a>
+        <a href="index.html" class="logo"><img src="favicon.svg" alt="Indogig Logo" style="height: 28px; width: 28px; vertical-align: middle; margin-right: 8px; display: inline-block;"><span><span style="color: var(--primary-yellow);">INDO</span>GIG</span></a>
         <div class="nav-links">
-            <a href="/">Home</a>
+            <a href="index.html">Home</a>
             <a href="user-agreement.html" class="">Terms</a>
             <a href="privacy-policy.html" class="active">Privacy</a>
             <div class="lang-switch">
-                <button id="btn-en" aria-pressed="true" class="active" onclick="switchLang('en')">EN</button>
-                <button id="btn-id" aria-pressed="false" onclick="switchLang('id')">ID</button>
+                <button id="btn-en" class="active" onclick="switchLang('en')">EN</button>
+                <button id="btn-id" onclick="switchLang('id')">ID</button>
             </div>
         </div>
     </nav>
 
     <div class="container">
-        <div id="content-en" lang="en" class="lang-content active">
+        <div id="content-en" class="lang-content active">
             <div class="legal-content">
-                <aside class="pilot-context"><a href="/pilot/">Scheduling pilot</a><p>Before a scheduling pilot begins, the venue and IndoGig review what team data is needed, who can access it and how it will be handled. For a first enquiry, please leave out staff lists, identity documents and bank details.</p></aside>
                 <h1>INDOGIG PRIVACY POLICY</h1>
 <p><strong>Effective date:</strong> May 1, 2026
 <strong>Last modified:</strong> May 1, 2026</p>
@@ -575,9 +564,8 @@ Phone: <strong>+62 818 0370 8605</strong></p>
 <hr />
             </div>
         </div>
-        <div id="content-id" lang="id" class="lang-content">
+        <div id="content-id" class="lang-content">
             <div class="legal-content">
-                <aside class="pilot-context"><a href="/id/pilot/">Uji coba penjadwalan</a><p>Sebelum uji coba penjadwalan dimulai, pihak tempat usaha dan IndoGig meninjau data tim yang diperlukan, siapa yang dapat mengaksesnya, dan cara pengelolaannya. Untuk pertanyaan awal, jangan sertakan daftar staf, dokumen identitas, atau data rekening.</p></aside>
                 <h1>KEBIJAKAN PRIVASI INDOGIG</h1>
 <p><strong>Tanggal berlaku:</strong> 1 Mei 2026
 <strong>Terakhir diubah:</strong> 1 Mei 2026</p>
@@ -1004,23 +992,19 @@ Telepon: <strong>+62 818 0370 8605</strong></p>
         <p style="margin-top: 0.5rem;">
             <a href="user-agreement.html">Terms of Use</a>
             <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="/">Home</a>
+            <a href="index.html">Home</a>
         </p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem;">Jalan Sunset Road Tengah Building No. 9, Seminyak, Kuta, Badung, Bali 80361</p>
     </footer>
 
     <script>
         function switchLang(lang) {
-            document.documentElement.lang = lang;
-            document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
-            document.getElementById('btn-id').setAttribute('aria-pressed', lang === 'id');
             document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.lang-switch button').forEach(el => el.classList.remove('active'));
             document.getElementById('content-' + lang).classList.add('active');
             document.getElementById('btn-' + lang).classList.add('active');
             document.title = lang === 'id' ? 'Kebijakan Privasi — Indogig' : 'Privacy Policy — Indogig';
         }
-        if (location.hash === '#content-id') switchLang('id');
     </script>
 </body>
 </html>
